@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count words from form</title>
+  </head>
+  <body>
+    <form id="myForm" action="/submit" method="post">
+      <label for="userInput">Enter the text:</label>
+      <input type="text" id="userInput" name="userInput" />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+    <p id="lengthDisplay"></p>
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Get the input value
+          const input = document.getElementById("userInput").value;
+
+          // Calculate the length of the input
+          const length = input.length;
+
+          // Display the length in the paragraph <p> with id "lengthDisplay"
+          document.getElementById(
+            "lengthDisplay"
+          ).textContent = `The length of the input is: ${length}`;
+        });
+    </script>
+  </body>
+</html>
